@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>トリフレ（TripFriend）— 一人旅に、もう一人の仲間を。</title>
+  <meta name="description" content="感情を分かち合い、コストも分け合える。一人旅専用マッチングアプリ『トリフレ』で、新しい旅のスタイルを始めよう。" />
+  <meta name="theme-color" content="#00d084" />
+
+  <!-- OGP / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="トリフレ（TripFriend）— 一人旅に、もう一人の仲間を。" />
+  <meta property="og:description" content="感情を分かち合い、コストも分け合える。一人旅専用マッチングアプリ『トリフレ』で、新しい旅のスタイルを始めよう。" />
+  <meta property="og:image" content="https://placehold.co/1200x630/00d084/ffffff?text=TripFriend" />
+  <meta property="og:url" content="https://tripfriend-website.netlify.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "トリフレ（TripFriend）",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "LifestyleApplication",
+    "offers": {"@type":"Offer","price":"0","priceCurrency":"JPY"},
+    "description": "一人旅専用の旅仲間マッチング。感情を共有し、コストも分け合える。",
+    "url": "https://your-domain.example"
+  }
+  </script>
+
+  <!-- Tailwind v3 (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emeraldMain: '#00d084',
+            emeraldLight: '#4ECDC4'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .gradient-bg { 
+      background: linear-gradient(135deg, #00d084 0%, #4ECDC4 100%); 
+    }
+    .shadow-emerald { 
+      box-shadow: 0 10px 25px rgba(0, 208, 132, 0.3); 
+    }
+    .hover\:shadow-emerald-lg:hover { 
+      box-shadow: 0 20px 40px rgba(0, 208, 132, 0.4); 
+    }
+    
+    /* アニメーション */
+    @keyframes float { 
+      0%, 100% { transform: translateY(0px); } 
+      50% { transform: translateY(-10px); } 
+    }
+    .animate-float { 
+      animation: float 4s ease-in-out infinite; 
+    }
+    
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .animate-bounce-slow {
+      animation: bounce-slow 3s infinite ease-in-out;
+    }
+    
+    @keyframes waving-hand {
+      0% { transform: rotate(0deg); }
+      15% { transform: rotate(14deg); }
+      30% { transform: rotate(-8deg); }
+      45% { transform: rotate(14deg); }
+      60% { transform: rotate(-4deg); }
+      75% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
+    }
+    .animate-waving-hand {
+      animation: waving-hand 2.5s infinite;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+    }
+    
+    /* アクセシビリティ対応 */
+    @media (prefers-reduced-motion: reduce) { 
+      .animate-float, .animate-bounce-slow, .animate-waving-hand { 
+        animation: none !important; 
+      } 
+    }
+  </style>
+</head>
+<body class="antialiased bg-gray-50 text-gray-800">
+
+  <!-- ファーストビュー -->
+  <section id="hero" class="relative gradient-bg text-white py-20 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-float">
+        一人旅に、もう一人の仲間を。
+      </h1>
+      <p class="text-lg md:text-2xl mb-8 opacity-95">
+        感情を分かち合い、コストも分け合える。<br class="hidden md:block" />一人旅専用マッチングアプリ
+      </p>
+
+      <div class="mb-10">
+        <img src="https://placehold.co/300x300/00d084/ffffff?text=🎒✈️" 
+             alt="トリフレキャラクター" 
+             class="mx-auto w-64 md:w-80 animate-bounce-slow drop-shadow-2xl" />
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="#" 
+           class="bg-white text-emeraldMain font-extrabold py-4 px-8 rounded-full shadow-emerald hover:shadow-emerald-lg hover:bg-gray-50 transition transform hover:scale-[1.02]">
+           無料で事前登録する
+        </a>
+        <a href="https://apps.apple.com/" target="_blank"
+           class="bg-white bg-opacity-20 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-full border-2 border-white border-opacity-30 hover:bg-white hover:text-emeraldMain transition transform hover:scale-[1.02]">
+           App Store
+        </a>
+        <a href="https://play.google.com/" target="_blank"
+           class="bg-white bg-opacity-20 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-full border-2 border-white border-opacity-30 hover:bg-white hover:text-emeraldMain transition transform hover:scale-[1.02]">
+           Google Play
+        </a>
+      </div>
+    </div>
+    
+    <!-- 背景装飾 -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full animate-float"></div>
+    <div class="absolute top-32 right-20 w-16 h-16 bg-white bg-opacity-10 rounded-full animate-float" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-white bg-opacity-10 rounded-full animate-float" style="animation-delay: 2s;"></div>
+  </section>
+
+  <!-- 課題提起セクション -->
+  <section id="problems" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">一人旅の「あるある」な悩み、</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-emeraldMain">ありませんか？</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl shadow-lg card-hover">
+          <div class="w-24 h-24 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-gray-700">感動を分かち合えない寂しさ</h3>
+          <p class="text-gray-600 leading-relaxed">絶景を見た時、美味しい料理を食べた時、「これ、誰かに伝えたい！」と思っても、隣に誰もいない…そんな経験はありませんか？</p>
+        </div>
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl shadow-lg card-hover">
+          <div class="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-gray-700">タクシーや食事のコストが重い</h3>
+          <p class="text-gray-600 leading-relaxed">「このタクシー、割り勘ならもっと安くなるのに…」「大皿料理をシェアしたいけど一人じゃ無理…」一人旅ならではの金銭的な悩みも。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 解決方法（アプリの特徴） -->
+  <section id="features" class="py-16 md:py-24 gradient-bg text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">トリフレが、</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">あなたの旅をもっと豊かにする！</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="feature-card bg-white text-gray-800 p-8 rounded-2xl shadow-2xl card-hover">
+          <div class="bg-gradient-to-br from-emeraldMain to-emeraldLight p-4 rounded-xl mb-6 inline-block">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-emeraldMain">直感的なスワイプで仲間探し</h3>
+          <p class="text-gray-600 leading-relaxed">Tinderのようにスワイプするだけで、同じ目的地や興味を持つ旅仲間を見つけられます。運命の出会いが、旅をさらに楽しく！</p>
+        </div>
+        <div class="feature-card bg-white text-gray-800 p-8 rounded-2xl shadow-2xl card-hover">
+          <div class="bg-gradient-to-br from-blue-400 to-blue-600 p-4 rounded-xl mb-6 inline-block">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-emeraldMain">詳細な旅行計画を共有</h3>
+          <p class="text-gray-600 leading-relaxed">「一緒に行く理由」「割り勘情報」「時間帯」まで細かく設定可能。お互いのニーズに合った仲間と、最高の瞬間を共有しましょう。</p>
+        </div>
+        <div class="feature-card bg-white text-gray-800 p-8 rounded-2xl shadow-2xl card-hover">
+          <div class="bg-gradient-to-br from-purple-400 to-purple-600 p-4 rounded-xl mb-6 inline-block">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-emeraldMain">本人確認・通報で安心</h3>
+          <p class="text-gray-600 leading-relaxed">「仲間募集中」「定員達成」など、募集状況が明確に表示。本人確認機能と通報システムで、安心して使える体験を提供します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ユーザー体験セクション -->
+  <section id="user-experience" class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">トリフレで、</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-emeraldMain">こんな旅が実現する！</h2>
+      <div class="max-w-5xl mx-auto">
+        <div class="story-card bg-white p-8 rounded-2xl shadow-xl mb-8 flex flex-col md:flex-row items-center md:space-x-8 card-hover">
+          <div class="relative mb-6 md:mb-0">
+            <img src="https://placehold.co/300x200/FF6B6B/FFFFFF?text=京都+清水寺" alt="ストーリー1" class="w-full md:w-80 rounded-xl shadow-lg">
+            <div class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">1</div>
+          </div>
+          <div class="text-left">
+            <h3 class="text-2xl font-semibold mb-4 text-gray-700">京都一人旅、でもちょっと寂しい…</h3>
+            <p class="text-gray-600 leading-relaxed">清水寺の美しい夕日。感動はするけれど、この気持ちを分かち合える人がいたらもっと最高なのに…そう思っていませんか？</p>
+          </div>
+        </div>
+        <div class="story-card bg-white p-8 rounded-2xl shadow-xl mb-8 flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8 card-hover">
+          <div class="relative mb-6 md:mb-0">
+            <img src="https://placehold.co/300x200/4ECDC4/FFFFFF?text=マッチング" alt="ストーリー2" class="w-full md:w-80 rounded-xl shadow-lg">
+            <div class="absolute -top-4 -left-4 bg-emeraldMain text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">2</div>
+          </div>
+          <div class="text-right">
+            <h3 class="text-2xl font-semibold mb-4 text-gray-700">トリフレで、旅の仲間とマッチング！</h3>
+            <p class="text-gray-600 leading-relaxed">トリフレを開けば、同じタイミングで京都を旅している仲間がすぐに見つかる！「夕日を見に行きませんか？」とメッセージを送ってみよう。</p>
+          </div>
+        </div>
+        <div class="story-card bg-white p-8 rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:space-x-8 card-hover">
+          <div class="relative mb-6 md:mb-0">
+            <img src="https://placehold.co/300x200/FFD93D/FFFFFF?text=感動+シェア" alt="ストーリー3" class="w-full md:w-80 rounded-xl shadow-lg">
+            <div class="absolute -top-4 -right-4 bg-yellow-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">3</div>
+          </div>
+          <div class="text-left">
+            <h3 class="text-2xl font-semibold mb-4 text-gray-700">感動を共有し、コストもお得に！</h3>
+            <p class="text-gray-600 leading-relaxed">新しい仲間と一緒に見る夕日は格別！さらに、夜ご飯のタクシー代も割り勘で、美味しい京料理もシェアして楽しめます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スクリーンショット / UIプレビュー -->
+  <section id="screenshots" class="py-16 md:py-24 bg-gray-900 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">アプリの使い心地を</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-emeraldMain">チラ見せ！</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-2xl card-hover">
+          <div class="bg-white p-4 rounded-xl mb-4">
+            <img src="https://placehold.co/250x500/00d084/FFFFFF?text=Swipe+Screen" alt="スワイプ画面" class="w-full rounded-lg shadow-md" loading="lazy" decoding="async">
+          </div>
+          <p class="text-lg font-semibold text-emeraldMain">仲間探しのスワイプ画面</p>
+          <p class="text-gray-300 text-sm mt-2">直感的なスワイプで理想の旅仲間を発見</p>
+        </div>
+        <div class="p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-2xl card-hover">
+          <div class="bg-white p-4 rounded-xl mb-4">
+            <img src="https://placehold.co/250x500/00d084/FFFFFF?text=Trip+Create" alt="旅行作成画面" class="w-full rounded-lg shadow-md" loading="lazy" decoding="async">
+          </div>
+          <p class="text-lg font-semibold text-emeraldMain">旅行作成画面</p>
+          <p class="text-gray-300 text-sm mt-2">詳細な旅行プランを簡単に作成・共有</p>
+        </div>
+        <div class="p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl shadow-2xl card-hover">
+          <div class="bg-white p-4 rounded-xl mb-4">
+            <img src="https://placehold.co/250x500/00d084/FFFFFF?text=Chat+Screen" alt="チャット画面" class="w-full rounded-lg shadow-md" loading="lazy" decoding="async">
+          </div>
+          <p class="text-lg font-semibold text-emeraldMain">チャット画面</p>
+          <p class="text-gray-300 text-sm mt-2">安心・安全なメッセージ機能</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口コミ・ソーシャルプルーフ -->
+  <section id="testimonials" class="py-16 md:py-24 bg-gradient-to-br from-emeraldLight/10 to-blue-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">ユーザーの声</h2>
+      <div class="max-w-4xl mx-auto bg-white p-10 rounded-2xl shadow-2xl card-hover">
+        <div class="flex justify-center mb-6">
+          <div class="flex space-x-1">
+            <span class="text-yellow-400 text-4xl">★</span>
+            <span class="text-yellow-400 text-4xl">★</span>
+            <span class="text-yellow-400 text-4xl">★</span>
+            <span class="text-yellow-400 text-4xl">★</span>
+            <span class="text-yellow-400 text-4xl">★</span>
+          </div>
+        </div>
+        <p class="text-xl italic text-gray-700 mb-8 leading-relaxed">「清水寺で夕日を見れたのは最高！一人じゃ味わえなかった感動を、トリフレで見つけた仲間と分かち合えました。タクシー代も割り勘できて、お財布にも優しいのが嬉しい！」</p>
+        <div class="flex items-center justify-center space-x-4">
+          <div class="w-16 h-16 bg-gradient-to-br from-emeraldMain to-emeraldLight rounded-full flex items-center justify-center text-white font-bold text-xl">A</div>
+          <div class="text-left">
+            <p class="font-semibold text-gray-800 text-lg">旅好きのAさん</p>
+            <p class="text-gray-500">20代 女性</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 今すぐ始めよう（CTA） -->
+  <section id="cta-bottom" class="py-16 md:py-24 gradient-bg text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-4">さあ、あなたも</h2>
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-8">新しい旅のスタイルを始めよう！</h2>
+      
+      <a href="#" class="bg-white text-emeraldMain font-extrabold py-6 px-16 rounded-full text-2xl shadow-emerald hover:shadow-emerald-lg hover:bg-gray-50 transition transform hover:scale-[1.02] inline-block mb-12">無料で事前登録する</a>
+      
+      <div class="flex flex-col md:flex-row justify-center gap-4 mb-8">
+        <div class="bg-white bg-opacity-20 backdrop-blur-sm p-4 rounded-2xl transition hover:bg-opacity-30">
+          <img src="https://placehold.co/150x50/FFFFFF/000000?text=App+Store" alt="App Store バッジ" class="h-12 md:h-16">
+        </div>
+        <div class="bg-white bg-opacity-20 backdrop-blur-sm p-4 rounded-2xl transition hover:bg-opacity-30">
+          <img src="https://placehold.co/150x50/FFFFFF/000000?text=Google+Play" alt="Google Play バッジ" class="h-12 md:h-16">
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 md:w-64 z-0 animate-waving-hand">
+      <img src="/home/ubuntu/upload/Gemini_Generated_Image_rngx41rngx41rngx.png" alt="トリフレキャラクター" class="w-full drop-shadow-2xl">
+    </div>
+    
+    <!-- 背景装飾 -->
+    <div class="absolute top-20 left-10 w-24 h-24 bg-white bg-opacity-10 rounded-full animate-float"></div>
+    <div class="absolute top-40 right-20 w-20 h-20 bg-white bg-opacity-10 rounded-full animate-float" style="animation-delay: 1.5s;"></div>
+    <div class="absolute bottom-32 left-1/4 w-16 h-16 bg-white bg-opacity-10 rounded-full animate-float" style="animation-delay: 3s;"></div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="flex justify-center items-center mb-6">
+        <img src="/home/ubuntu/upload/Gemini_Generated_Image_rngx41rngx41rngx.png" alt="トリフレキャラクター" class="w-16 h-16 mr-4">
+        <h3 class="text-2xl font-bold text-emeraldMain">TripFriend</h3>
+      </div>
+      <p class="text-gray-400 mb-4">一人旅に、もう一人の仲間を。</p>
+      <div class="mt-4 space-x-4">
+        <a href="terms.html" class="text-gray-400 hover:text-white">利用規約</a>
+        <a href="privacy.html" class="text-gray-400 hover:text-white">プライバシーポリシー</a>
+        <a href="contact.html" class="text-gray-400 hover:text-white">お問い合わせ</a>
+      </div>
+      <p class="text-gray-500 text-xs mt-6">&copy; 2025 TripFriend. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
