@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>特定商取引法に基づく表記 | トリフレ（TripFriend）</title>
-  <meta name="description" content="トリフレの特定商取引法に基づく表記をご確認ください。" />
+  <title>お問い合わせ - トリフレ</title>
+  <meta name="description" content="トリフレへのお問い合わせはこちらから。技術的な問題、ご意見、ご要望など、お気軽にご連絡ください。" />
   <meta name="theme-color" content="#00d084" />
 
   <!-- Tailwind v3 (CDN) -->
@@ -26,8 +26,8 @@
     .gradient-bg { 
       background: linear-gradient(135deg, #00d084 0%, #4ECDC4 100%); 
     }
-    .legal-content {
-      line-height: 1.8;
+    .shadow-emerald { 
+      box-shadow: 0 10px 25px rgba(0, 208, 132, 0.3); 
     }
   </style>
 </head>
@@ -38,224 +38,244 @@
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center">
-          <a href="index.html" class="flex items-center hover:opacity-80 transition">
-            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3">
-              <span class="text-xl">🎒</span>
-            </div>
-            <span class="text-xl font-bold">TripFriend</span>
-          </a>
+          <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3">
+            <span class="text-lg font-bold">🎒</span>
+          </div>
+          <h1 class="text-2xl font-bold">トリフレ</h1>
         </div>
-        <nav class="hidden md:flex space-x-6">
-          <a href="index.html" class="hover:text-emeraldLight transition">ホーム</a>
-          <a href="terms.html" class="hover:text-emeraldLight transition">利用規約</a>
-          <a href="privacy.html" class="hover:text-emeraldLight transition">プライバシーポリシー</a>
-          <a href="contact.html" class="hover:text-emeraldLight transition">お問い合わせ</a>
-        </nav>
+        <a href="index.html" class="text-white hover:text-gray-200 transition">
+          ← ホームに戻る
+        </a>
       </div>
     </div>
   </header>
 
   <!-- メインコンテンツ -->
-  <main class="py-12">
-    <div class="container mx-auto px-4 max-w-4xl">
-      
-      <!-- ページタイトル -->
-      <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">特定商取引法に基づく表記</h1>
-        <p class="text-gray-600 text-lg">デジタルコンテンツ販売に関する法定表示</p>
+  <main class="container mx-auto px-4 py-12">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">お問い合わせ</h1>
+        <p class="text-gray-600 text-lg">
+          トリフレに関するご質問、ご意見、バグ報告など、<br>
+          お気軽にお問い合わせください。
+        </p>
       </div>
 
-      <!-- 法的文書コンテンツ -->
-      <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 legal-content">
-        
-        <!-- 最終更新日 -->
-        <div class="text-center mb-8">
-          <p class="text-sm text-gray-500 bg-gray-50 inline-block px-4 py-2 rounded-full">
-            最終更新日: 2025年9月3日
-          </p>
-        </div>
+      <!-- お問い合わせフォーム -->
+      <div class="bg-white rounded-2xl shadow-xl p-8">
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="mb-6">
+            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+              お名前 <span class="text-red-500">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emeraldMain focus:border-transparent transition"
+              placeholder="お名前を入力してください"
+            />
+          </div>
 
-        <!-- 表記内容 -->
-        <div class="space-y-8">
-          
-          <!-- 販売業者 -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">販売業者</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <p class="text-gray-700">
-                <span class="font-semibold">事業者名:</span> 株式会社Riorno（リオルノ）<br>
-                <span class="font-semibold">代表者:</span> 吉田北斗
-              </p>
+          <div class="mb-6">
+            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+              メールアドレス <span class="text-red-500">*</span>
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emeraldMain focus:border-transparent transition"
+              placeholder="example@email.com"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label for="category" class="block text-sm font-semibold text-gray-700 mb-2">
+              お問い合わせ種別 <span class="text-red-500">*</span>
+            </label>
+            <select 
+              id="category" 
+              name="category" 
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emeraldMain focus:border-transparent transition"
+            >
+              <option value="">選択してください</option>
+              <option value="技術的な問題">技術的な問題・バグ報告</option>
+              <option value="アカウント関連">アカウント・ログイン問題</option>
+              <option value="課金・決済">課金・決済に関する問題</option>
+              <option value="利用方法">アプリの使い方について</option>
+              <option value="機能要望">新機能のご要望</option>
+              <option value="プライバシー">プライバシー・セキュリティ</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="mb-6">
+            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+              お問い合わせ内容 <span class="text-red-500">*</span>
+            </label>
+            <textarea 
+              id="message" 
+              name="message" 
+              required
+              rows="6"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emeraldMain focus:border-transparent transition resize-none"
+              placeholder="お問い合わせ内容を詳しくご記入ください&#10;&#10;技術的な問題の場合は、以下の情報もお教えください：&#10;- 端末（iPhone/Android）&#10;- OSバージョン&#10;- アプリバージョン&#10;- 問題が発生した手順"
+            ></textarea>
+          </div>
+
+          <div class="mb-6">
+            <label class="flex items-start">
+              <input 
+                type="checkbox" 
+                id="privacy" 
+                name="privacy" 
+                required
+                class="mt-1 mr-3"
+              />
+              <span class="text-sm text-gray-600">
+                <a href="privacy.html" target="_blank" class="text-emeraldMain hover:underline">プライバシーポリシー</a>
+                に同意します <span class="text-red-500">*</span>
+              </span>
+            </label>
+          </div>
+
+          <button 
+            type="submit" 
+            id="submitBtn"
+            class="w-full gradient-bg text-white font-bold py-4 px-6 rounded-lg shadow-emerald hover:shadow-xl transition transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            送信する
+          </button>
+        </form>
+
+        <!-- 送信完了メッセージ -->
+        <div id="successMessage" class="hidden mt-6 p-4 bg-green-100 border border-green-300 rounded-lg">
+          <div class="flex items-center">
+            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+              <span class="text-white text-sm">✓</span>
             </div>
-          </section>
-
-          <!-- 所在地 -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">所在地</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <p class="text-gray-700">
-                〒810-0001<br>
-                福岡県福岡市中央区天神2丁目2番12号T&Jビルディング7F
-              </p>
-            </div>
-          </section>
-
-          <!-- 連絡先 -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">連絡先</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <p class="text-gray-700">
-                <span class="font-semibold">お問い合わせフォーム:</span> <a href="contact.html" class="text-emeraldMain underline hover:text-emeraldLight">こちら</a><br>
-                <span class="font-semibold">営業時間:</span> 平日 10:00 - 18:00（土日祝日を除く）
-              </p>
-            </div>
-          </section>
-
-          <!-- 販売価格 -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">販売価格</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <div class="text-gray-700 space-y-3">
-                <div class="flex justify-between items-center border-b border-gray-300 pb-2">
-                  <span class="font-semibold">Pro機能（月額プラン）</span>
-                  <span class="text-lg font-bold text-emeraldMain">700円（税込）/ 月</span>
-                </div>
-                <div class="text-sm text-gray-600">
-                  <p>• 3日間の無料トライアル期間あり</p>
-                  <p>• 自動更新課金</p>
-                  <p>• App Store / Google Play 経由での課金</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- 支払方法 -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">支払方法</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <div class="text-gray-700 space-y-2">
-                <p><strong>iOS:</strong> App Store決済（クレジットカード、デビットカード、Apple ID残高等）</p>
-                <p><strong>Android:</strong> Google Play決済（クレジットカード、デビットカード、Google Play残高等）</p>
-                <p class="text-sm text-gray-600 mt-3">※ 決済はApple Inc.またはGoogle Inc.により処理されます</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- 商品の引渡し時期 -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">商品の引渡し時期</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <p class="text-gray-700">
-                決済完了後、即座にPro機能をご利用いただけます。
-              </p>
-            </div>
-          </section>
-
-          <!-- 返品・キャンセル -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">返品・キャンセルについて</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <div class="text-gray-700 space-y-3">
-                <p><strong>デジタルコンテンツの性質上、原則として返品・返金はお受けできません。</strong></p>
-                <div class="text-sm space-y-2">
-                  <p><strong>ただし、以下の場合は例外とします：</strong></p>
-                  <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>当社のサービス提供に重大な問題があった場合</li>
-                    <li>システム的な不具合により正常にサービスを利用できない場合</li>
-                  </ul>
-                </div>
-                <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded">
-                  <p class="text-sm text-blue-800">
-                    <strong>サブスクリプションの解約について：</strong><br>
-                    各プラットフォーム（App Store / Google Play）の設定画面からいつでも自動更新を停止できます。解約手続き完了後は次回更新日に自動更新が停止されます。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- 無料トライアル -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">無料トライアルについて</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <div class="text-gray-700 space-y-2">
-                <p><strong>期間:</strong> 3日間</p>
-                <p><strong>内容:</strong> Pro機能を無料でお試しいただけます</p>
-                <p><strong>注意事項:</strong></p>
-                <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
-                  <li>トライアル期間終了24時間前までに解約しない限り、自動的に有料プランに移行します</li>
-                  <li>トライアル期間中でもいつでも解約可能です</li>
-                  <li>同一アカウントでの複数回のトライアル利用はできません</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <!-- 表現及び商品に関する注意書き -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">表現及び商品に関する注意書き</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <div class="text-gray-700 space-y-2 text-sm">
-                <p>• 本サービスはマッチング機能を提供するものであり、旅行の実施や成功を保証するものではありません</p>
-                <p>• ユーザー同士のマッチングや実際の旅行については、各ユーザーの自己責任となります</p>
-                <p>• サービス内容は改善のため予告なく変更される場合があります</p>
-                <p>• 画面イメージは開発中のものであり、実際のアプリと異なる場合があります</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- 個人情報の取扱い -->
-          <section class="border-b border-gray-200 pb-6">
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">個人情報の取扱い</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <p class="text-gray-700">
-                個人情報の取扱いについては、<a href="privacy.html" class="text-emeraldMain underline hover:text-emeraldLight">プライバシーポリシー</a>をご確認ください。
-              </p>
-            </div>
-          </section>
-
-          <!-- 準拠法・管轄裁判所 -->
-          <section>
-            <h2 class="text-xl font-bold text-emeraldMain mb-4">準拠法・管轄裁判所</h2>
-            <div class="bg-gray-50 p-4 rounded-lg">
-              <p class="text-gray-700">
-                本表記は日本法に準拠し、東京地方裁判所を第一審の専属的合意管轄裁判所とします。
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-        <!-- 更新履歴 -->
-        <div class="mt-12 pt-8 border-t border-gray-200">
-          <h2 class="text-lg font-bold text-gray-800 mb-4">更新履歴</h2>
-          <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-600">
-            <p>2025年9月3日: 初版作成</p>
+            <p class="text-green-800 font-semibold">
+              お問い合わせを受け付けました。<br>
+              通常24時間以内にご返信いたします。
+            </p>
           </div>
         </div>
 
+        <!-- エラーメッセージ -->
+        <div id="errorMessage" class="hidden mt-6 p-4 bg-red-100 border border-red-300 rounded-lg">
+          <p class="text-red-800 font-semibold">
+            送信に失敗しました。時間をおいて再度お試しください。
+          </p>
+        </div>
+      </div>
+
+      <!-- 他のお問い合わせ方法 -->
+      <div class="mt-12 bg-gray-100 rounded-2xl p-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">その他のお問い合わせ方法</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-emeraldMain rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white text-2xl">📧</span>
+            </div>
+            <h3 class="font-semibold text-gray-800 mb-2">メール</h3>
+            <p class="text-gray-600">hokuto.yoshida@riorno.com</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-emeraldMain rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white text-2xl">🏢</span>
+            </div>
+            <h3 class="font-semibold text-gray-800 mb-2">運営会社</h3>
+            <p class="text-gray-600">
+              株式会社Riorno<br>
+              〒810-0001<br>
+              福岡県福岡市中央区天神2-2-12<br>
+              T&Jビルディング7F
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 
   <!-- フッター -->
-  <footer class="bg-gray-900 text-white py-8">
+  <footer class="bg-gray-900 text-white py-12 mt-16">
     <div class="container mx-auto px-4 text-center">
-      <div class="flex justify-center items-center mb-4">
-        <div class="w-12 h-12 bg-gradient-to-br from-emeraldMain to-emeraldLight rounded-full flex items-center justify-center mr-3">
-          <span class="text-xl">🎒</span>
+      <div class="flex justify-center items-center mb-6">
+        <div class="w-12 h-12 bg-emeraldMain rounded-full flex items-center justify-center mr-4">
+          <span class="text-white font-bold">🎒</span>
         </div>
-        <h3 class="text-xl font-bold text-emeraldMain">TripFriend</h3>
+        <h3 class="text-2xl font-bold text-emeraldMain">TripFriend</h3>
       </div>
-      <div class="space-x-4 text-sm">
+      <div class="space-x-4">
         <a href="index.html" class="text-gray-400 hover:text-white transition">ホーム</a>
         <a href="terms.html" class="text-gray-400 hover:text-white transition">利用規約</a>
         <a href="privacy.html" class="text-gray-400 hover:text-white transition">プライバシーポリシー</a>
-        <a href="contact.html" class="text-gray-400 hover:text-white transition">お問い合わせ</a>
+        <a href="tokusho.html" class="text-gray-400 hover:text-white transition">特定商取引法</a>
       </div>
-      <p class="text-gray-500 text-xs mt-4">&copy; 2025 TripFriend. All rights reserved.</p>
+      <p class="text-gray-500 text-xs mt-6">&copy; 2025 株式会社Riorno. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // ボタンを無効化
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+      
+      // フォームデータを取得
+      const formData = new FormData(event.target);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        category: formData.get('category'),
+        message: formData.get('message')
+      };
+      
+      // Netlify Forms に送信
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...data
+        }).toString()
+      })
+      .then(() => {
+        // 成功時
+        successMessage.classList.remove('hidden');
+        errorMessage.classList.add('hidden');
+        event.target.reset();
+      })
+      .catch(() => {
+        // エラー時
+        errorMessage.classList.remove('hidden');
+        successMessage.classList.add('hidden');
+      })
+      .finally(() => {
+        // ボタンを復活
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信する';
+      });
+    }
+  </script>
+
+  <!-- Netlify Forms用の隠しフォーム -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="category" />
+    <textarea name="message"></textarea>
+  </form>
 
 </body>
 </html>
