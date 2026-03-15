@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>外部送信に関する情報 | トリフレ（TripFriend）</title>
+  <meta name="description" content="トリフレが利用する外部送信サービスに関する情報を掲載しています。" />
+  <meta name="theme-color" content="#00d084" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emeraldMain: '#00d084',
+            emeraldLight: '#4ECDC4'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #00d084 0%, #4ECDC4 100%);
+    }
+    .legal-content {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body class="antialiased bg-gray-50 text-gray-800">
+
+  <!-- ヘッダー -->
+  <header class="gradient-bg text-white py-6">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center hover:opacity-80 transition">
+            <span class="text-xl font-bold">トリフレ</span>
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-emeraldLight transition">ホーム</a>
+          <a href="terms.html" class="hover:text-emeraldLight transition">利用規約</a>
+          <a href="privacy.html" class="hover:text-emeraldLight transition">プライバシーポリシー</a>
+          <a href="contact.html" class="hover:text-emeraldLight transition">お問い合わせ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="py-12">
+    <div class="container mx-auto px-4 max-w-4xl">
+
+      <!-- ページタイトル -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">外部送信に関する情報</h1>
+        <p class="text-gray-600 text-lg">電気通信事業法第27条の12に基づく情報開示</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 legal-content">
+
+        <div class="text-center mb-8">
+          <p class="text-sm text-gray-500 bg-gray-50 inline-block px-4 py-2 rounded-full">
+            最終更新日: 2026年3月15日
+          </p>
+        </div>
+
+        <div class="mb-8 p-4 bg-emerald-50 border border-emeraldMain rounded-lg">
+          <p class="text-gray-700 text-sm">
+            トリフレでは、サービスの提供・改善・安全確保のために、以下の外部サービスへユーザーに関する情報を送信しています。電気通信事業法に基づき、その内容を開示します。
+          </p>
+        </div>
+
+        <div class="space-y-8">
+
+          <!-- Firebase -->
+          <section class="border-b border-gray-200 pb-8">
+            <div class="flex items-center mb-4">
+              <div class="w-2 h-6 bg-emeraldMain rounded mr-3"></div>
+              <h2 class="text-xl font-bold text-gray-800">Firebase（Google LLC）</h2>
+            </div>
+            <div class="bg-gray-50 p-5 rounded-lg space-y-4">
+              <div>
+                <p class="text-sm font-semibold text-gray-600 mb-1">送信される情報</p>
+                <ul class="text-gray-700 text-sm space-y-1 list-disc list-inside ml-2">
+                  <li>デバイス識別情報（デバイストークン）</li>
+                  <li>ユーザーID（アプリ内識別子）</li>
+                  <li>プッシュ通知の送受信情報</li>
+                  <li>プロフィール画像・写真データ</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-gray-600 mb-1">利用目的</p>
+                <ul class="text-gray-700 text-sm space-y-1 list-disc list-inside ml-2">
+                  <li>ユーザー認証（Firebase Authentication）</li>
+                  <li>プッシュ通知の配信（Firebase Cloud Messaging）</li>
+                  <li>画像・ファイルの保存（Firebase Storage）</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-gray-600 mb-1">送信先のプライバシーポリシー</p>
+                <a href="https://policies.google.com/privacy" target="_blank" class="text-emeraldMain underline text-sm hover:text-emeraldLight">https://policies.google.com/privacy</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Formspree -->
+          <section class="border-b border-gray-200 pb-8">
+            <div class="flex items-center mb-4">
+              <div class="w-2 h-6 bg-emeraldMain rounded mr-3"></div>
+              <h2 class="text-xl font-bold text-gray-800">Formspree（Formspree, Inc.）</h2>
+            </div>
+            <div class="bg-gray-50 p-5 rounded-lg space-y-4">
+              <div>
+                <p class="text-sm font-semibold text-gray-600 mb-1">送信される情報</p>
+                <ul class="text-gray-700 text-sm space-y-1 list-disc list-inside ml-2">
+                  <li>お問い合わせ内容（入力されたテキスト）</li>
+                  <li>アカウント名・メールアドレス（任意入力分）</li>
+                  <li>通報内容（通報機能利用時）</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-gray-600 mb-1">利用目的</p>
+                <ul class="text-gray-700 text-sm space-y-1 list-disc list-inside ml-2">
+                  <li>お問い合わせフォームの送信処理</li>
+                  <li>通報・違反報告の受付</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-gray-600 mb-1">送信先のプライバシーポリシー</p>
+                <a href="https://formspree.io/legal/privacy-policy" target="_blank" class="text-emeraldMain underline text-sm hover:text-emeraldLight">https://formspree.io/legal/privacy-policy</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- MongoDB Atlas -->
+          <section class="border-b border-gray-200 pb-8">
+            <div class="flex items-center mb-4">
+              <div class="w-2 h-6 bg-emeraldMain rounded mr-3"></div>
+              <h2 class="text-xl font-bold text-gray-800">MongoDB Atlas（MongoDB, Inc.）</h2>
+            </div>
+            <div class="bg-gray-50 p-5 rounded-lg space-y-4">
+              <div>
+                <p class="text-sm font-semibold text-gray-600 mb-1">送信される情報</p>
+                <ul class="text-gray-700 text-sm space-y-1 list-disc list-inside ml-2">
+                  <li>プロフィール情報（名前、年齢、性別、自己紹介等）</li>
+                  <li>旅の計画・募集情報</li>
+                  <li>メッセージ・チャット内容</li>
+                  <li>マッチング情報</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-gray-600 mb-1">利用目的</p>
+                <ul class="text-gray-700 text-sm space-y-1 list-disc list-inside ml-2">
+                  <li>サービスのデータ保存・管理</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-gray-600 mb-1">送信先のプライバシーポリシー</p>
+                <a href="https://www.mongodb.com/legal/privacy-policy" target="_blank" class="text-emeraldMain underline text-sm hover:text-emeraldLight">https://www.mongodb.com/legal/privacy-policy</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- お問い合わせ -->
+          <section>
+            <h2 class="text-xl font-bold text-emeraldMain mb-4">お問い合わせ</h2>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="text-gray-700">
+                外部送信に関するお問い合わせは、<a href="contact.html" class="text-emeraldMain underline hover:text-emeraldLight">お問い合わせフォーム</a>よりご連絡ください。<br>
+                <span class="text-sm text-gray-600">営業時間: 平日 10:00 - 17:00（土日祝日を除く）</span>
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <div class="flex justify-center items-center mb-4">
+        <h3 class="text-xl font-bold text-emeraldMain">トリフレ</h3>
+      </div>
+      <div class="space-x-4 text-sm">
+        <a href="index.html" class="text-gray-400 hover:text-white transition">ホーム</a>
+        <a href="terms.html" class="text-gray-400 hover:text-white transition">利用規約</a>
+        <a href="privacy.html" class="text-gray-400 hover:text-white transition">プライバシーポリシー</a>
+        <a href="tokusho.html" class="text-gray-400 hover:text-white transition">特定商取引法表記</a>
+        <a href="gaibusoshin.html" class="text-gray-400 hover:text-white transition">外部送信情報</a>
+        <a href="contact.html" class="text-gray-400 hover:text-white transition">お問い合わせ</a>
+      </div>
+      <p class="text-gray-500 text-xs mt-4">&copy; 2025 株式会社Riorno. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
